@@ -50,7 +50,7 @@ namespace InventarioAPI.Migrations
 
                     b.HasIndex("Id_Proveedor");
 
-                    b.ToTable("Productos");
+                    b.ToTable("Productos", (string)null);
 
                     b.HasData(
                         new
@@ -96,7 +96,7 @@ namespace InventarioAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Proveedores");
+                    b.ToTable("Proveedores", (string)null);
 
                     b.HasData(
                         new
