@@ -12,7 +12,7 @@ namespace InventarioAPI.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
 
         {
-            //Ola amigos. soy Esther
+            
             modelBuilder.Entity<Proveedor>().HasData(
                 new Proveedor()
                 {
