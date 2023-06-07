@@ -10,9 +10,7 @@ namespace InventarioAPI.Data
         public DbSet<Proveedor> Proveedores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-
         {
-            
             modelBuilder.Entity<Proveedor>().HasData(
                 new Proveedor()
                 {
