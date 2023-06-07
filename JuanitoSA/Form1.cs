@@ -38,12 +38,12 @@ namespace JuanitoSA
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            if (panelMenuVertical.Width == 187)
+            if (panelMenuVertical.Width == 77)
             {
-                panelMenuVertical.Width = 77;
+                panelMenuVertical.Width = 187;
             }
             else
-                panelMenuVertical.Width = 187;
+                panelMenuVertical.Width = 77;
             
         }
 

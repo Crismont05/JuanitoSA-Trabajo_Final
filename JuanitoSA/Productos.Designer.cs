@@ -58,7 +58,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(272, 9);
+            this.label1.Location = new System.Drawing.Point(318, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 24);
             this.label1.TabIndex = 0;
@@ -77,7 +77,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 36);
+            this.groupBox1.Location = new System.Drawing.Point(58, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(828, 222);
             this.groupBox1.TabIndex = 1;
@@ -166,10 +166,10 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvProductos.Location = new System.Drawing.Point(189, 340);
+            this.dgvProductos.Location = new System.Drawing.Point(240, 349);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowTemplate.Height = 25;
-            this.dgvProductos.Size = new System.Drawing.Size(444, 150);
+            this.dgvProductos.Size = new System.Drawing.Size(439, 222);
             this.dgvProductos.TabIndex = 2;
             // 
             // Column1
@@ -198,7 +198,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(82, 278);
+            this.btnAgregar.Location = new System.Drawing.Point(128, 287);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(130, 37);
             this.btnAgregar.TabIndex = 3;
@@ -211,7 +211,7 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(239, 278);
+            this.btnModificar.Location = new System.Drawing.Point(285, 287);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(130, 37);
             this.btnModificar.TabIndex = 4;
@@ -224,7 +224,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(421, 278);
+            this.btnGuardar.Location = new System.Drawing.Point(467, 287);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 37);
             this.btnGuardar.TabIndex = 5;
@@ -237,7 +237,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(596, 278);
+            this.btnEliminar.Location = new System.Drawing.Point(642, 287);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(130, 37);
             this.btnEliminar.TabIndex = 6;
@@ -249,7 +249,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(852, 502);
+            this.ClientSize = new System.Drawing.Size(960, 604);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnModificar);

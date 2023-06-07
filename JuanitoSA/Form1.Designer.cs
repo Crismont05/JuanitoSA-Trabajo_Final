@@ -69,7 +69,7 @@
             this.panelMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenuVertical.Location = new System.Drawing.Point(0, 0);
             this.panelMenuVertical.Name = "panelMenuVertical";
-            this.panelMenuVertical.Size = new System.Drawing.Size(187, 536);
+            this.panelMenuVertical.Size = new System.Drawing.Size(77, 536);
             this.panelMenuVertical.TabIndex = 0;
             // 
             // pictureBox4
@@ -167,10 +167,11 @@
             // 
             // btnInicio
             // 
+            this.btnInicio.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInicio.Image = global::JuanitoSA.Properties.Resources.logo_transparent2;
-            this.btnInicio.Location = new System.Drawing.Point(9, -6);
+            this.btnInicio.Location = new System.Drawing.Point(0, 0);
             this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(163, 136);
+            this.btnInicio.Size = new System.Drawing.Size(77, 136);
             this.btnInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnInicio.TabIndex = 0;
             this.btnInicio.TabStop = false;
@@ -182,9 +183,9 @@
             this.panelBarraTitulo.Controls.Add(this.pictureBox6);
             this.panelBarraTitulo.Controls.Add(this.label1);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBarraTitulo.Location = new System.Drawing.Point(187, 0);
+            this.panelBarraTitulo.Location = new System.Drawing.Point(77, 0);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(793, 41);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(903, 41);
             this.panelBarraTitulo.TabIndex = 1;
             // 
             // pictureBox6
@@ -212,9 +213,9 @@
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(187, 41);
+            this.panelContenedor.Location = new System.Drawing.Point(77, 41);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(793, 495);
+            this.panelContenedor.Size = new System.Drawing.Size(903, 495);
             this.panelContenedor.TabIndex = 2;
             // 
             // Form1
