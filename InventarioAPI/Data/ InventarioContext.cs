@@ -10,7 +10,9 @@ namespace InventarioAPI.Data
         public DbSet<Proveedor> Proveedores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
+
         {
+            //Ola amigos. soy Esther
             modelBuilder.Entity<Proveedor>().HasData(
                 new Proveedor()
                 {
