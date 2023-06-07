@@ -101,7 +101,7 @@ namespace InventarioAPI.Controllers
                 return NotFound();
             }
 
-            _proveedorRepo.Remove(proveedor);
+            await _proveedorRepo.Remove(proveedor);
 
             return NoContent();
         }
