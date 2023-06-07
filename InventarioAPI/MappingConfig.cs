@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using InventarioAPI.Models;
-using InventarioAPI.Models.Dtos;
+using InventarioAPI.Models.ProductoDto;
 using InventarioAPI.Models.ProveedorDto;
 
 namespace InventarioAPI

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InventarioAPI.Models.Dtos
+namespace InventarioAPI.Models.ProductoDto
 {
     public class CreateProductoDto
     {

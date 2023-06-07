@@ -7,7 +7,7 @@ using InventarioAPI.Data;
 using InventarioAPI.Models;
 using InventarioAPI.Repository.IRepository;
 using InventarioAPI.Models.ProveedorDto;
-using InventarioAPI.Models.Dtos;
+using InventarioAPI.Models.ProductoDto;
 
 namespace InventarioAPI.Controllers
 {
@@ -28,14 +28,14 @@ namespace InventarioAPI.Controllers
             _mapper = mapper;
         }
 
-
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<ProductoDto>>> GetProductos()
         {
-            _logger.LogInformation("Obtienes una lista de los proveedores");
-            var productoslist = await _productoRepo.GetAll();
-            return Ok(_mapper.Map<ProductoDto>(productoslist));     
+            _logger.LogInformation("Obtienes una lista de los productos");
+            var productolist = await _productoRepo.GetAll();
+            return Ok(_mapper.Map<IEnumerable<ProductoDto>>(productolist));
         }
+
     }
 }
