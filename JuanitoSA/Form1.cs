@@ -44,7 +44,7 @@ namespace JuanitoSA
             }
             else
                 panelMenuVertical.Width = 77;
-            
+
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -55,6 +55,11 @@ namespace JuanitoSA
         private void Form1_Load(object sender, EventArgs e)
         {
             btnInicio_Click(null, e);
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

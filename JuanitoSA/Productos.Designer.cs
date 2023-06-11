@@ -31,7 +31,7 @@
             label1 = new Label();
             groupBox1 = new GroupBox();
             pictureBox1 = new PictureBox();
-            txtDetalle = new TextBox();
+            txtCosto = new TextBox();
             txtPrecio = new TextBox();
             txtCodigo = new TextBox();
             label5 = new Label();
@@ -63,7 +63,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(pictureBox1);
-            groupBox1.Controls.Add(txtDetalle);
+            groupBox1.Controls.Add(txtCosto);
             groupBox1.Controls.Add(txtPrecio);
             groupBox1.Controls.Add(txtCodigo);
             groupBox1.Controls.Add(label5);
@@ -93,13 +93,13 @@
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
-            // txtDetalle
+            // txtCosto
             // 
-            txtDetalle.Location = new Point(169, 248);
-            txtDetalle.Margin = new Padding(3, 4, 3, 4);
-            txtDetalle.Name = "txtDetalle";
-            txtDetalle.Size = new Size(253, 30);
-            txtDetalle.TabIndex = 8;
+            txtCosto.Location = new Point(169, 248);
+            txtCosto.Margin = new Padding(3, 4, 3, 4);
+            txtCosto.Name = "txtCosto";
+            txtCosto.Size = new Size(253, 30);
+            txtCosto.TabIndex = 8;
             // 
             // txtPrecio
             // 
@@ -260,7 +260,7 @@
         private Label label1;
         private GroupBox groupBox1;
         private PictureBox pictureBox1;
-        private TextBox txtDetalle;
+        private TextBox txtCosto;
         private TextBox txtPrecio;
         private TextBox txtCodigo;
         private Label label5;

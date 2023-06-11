@@ -21,7 +21,7 @@ namespace JuanitoSA
 
         private void Productos_Load(object sender, EventArgs e)
         {
-            GetallProducts();   
+            GetallProducts();
         }
 
         private async void GetallProducts()
@@ -32,13 +32,13 @@ namespace JuanitoSA
                 {
                     if (response.IsSuccessStatusCode)
                     {
-                        var students = await response.Content.ReadAsStringAsync();
-                        var displaydata = JsonConvert.DeserializeObject<List<ProductoDto>>(students);
+                        var productos = await response.Content.ReadAsStringAsync();
+                        var displaydata = JsonConvert.DeserializeObject<List<ProductoDto>>(productos);
                         dgvProductos.DataSource = displaydata.ToList();
                     }
                     else
                     {
-                        MessageBox.Show($"No se puede obtener la lista de estudiantes: {response.StatusCode}");
+                        MessageBox.Show($"No se puede obtener la lista de Productos: {response.StatusCode}");
                     }
                 }
             }
