@@ -85,7 +85,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Investor_Icons_01;
-            pictureBox1.Location = new Point(535, 51);
+            pictureBox1.Location = new Point(617, 70);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(214, 175);
@@ -98,7 +98,7 @@
             txtDetalle.Location = new Point(169, 248);
             txtDetalle.Margin = new Padding(3, 4, 3, 4);
             txtDetalle.Name = "txtDetalle";
-            txtDetalle.Size = new Size(604, 30);
+            txtDetalle.Size = new Size(253, 30);
             txtDetalle.TabIndex = 8;
             // 
             // txtPrecio
@@ -122,9 +122,9 @@
             label5.AutoSize = true;
             label5.Location = new Point(39, 252);
             label5.Name = "label5";
-            label5.Size = new Size(121, 22);
+            label5.Size = new Size(68, 22);
             label5.TabIndex = 4;
-            label5.Text = "Descripción:";
+            label5.Text = "Costo:";
             // 
             // label4
             // 
