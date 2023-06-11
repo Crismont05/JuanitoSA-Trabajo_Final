@@ -33,10 +33,8 @@
             pictureBox1 = new PictureBox();
             txtCosto = new TextBox();
             txtPrecio = new TextBox();
-            txtCodigo = new TextBox();
             label5 = new Label();
             label4 = new Label();
-            label3 = new Label();
             txtNombre = new TextBox();
             label2 = new Label();
             dgvProductos = new DataGridView();
@@ -44,6 +42,10 @@
             btnModificar = new Button();
             btnGuardar = new Button();
             btnEliminar = new Button();
+            label3 = new Label();
+            txtexistencia = new TextBox();
+            label6 = new Label();
+            txtIdProveedor = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
@@ -62,13 +64,15 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtIdProveedor);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(txtexistencia);
+            groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(pictureBox1);
             groupBox1.Controls.Add(txtCosto);
             groupBox1.Controls.Add(txtPrecio);
-            groupBox1.Controls.Add(txtCodigo);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txtNombre);
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -95,7 +99,7 @@
             // 
             // txtCosto
             // 
-            txtCosto.Location = new Point(169, 248);
+            txtCosto.Location = new Point(199, 126);
             txtCosto.Margin = new Padding(3, 4, 3, 4);
             txtCosto.Name = "txtCosto";
             txtCosto.Size = new Size(253, 30);
@@ -103,24 +107,16 @@
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(169, 179);
+            txtPrecio.Location = new Point(199, 67);
             txtPrecio.Margin = new Padding(3, 4, 3, 4);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(253, 30);
             txtPrecio.TabIndex = 7;
             // 
-            // txtCodigo
-            // 
-            txtCodigo.Location = new Point(169, 120);
-            txtCodigo.Margin = new Padding(3, 4, 3, 4);
-            txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(253, 30);
-            txtCodigo.TabIndex = 6;
-            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(39, 252);
+            label5.Location = new Point(80, 129);
             label5.Name = "label5";
             label5.Size = new Size(68, 22);
             label5.TabIndex = 4;
@@ -129,24 +125,15 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(39, 187);
+            label4.Location = new Point(80, 70);
             label4.Name = "label4";
             label4.Size = new Size(71, 22);
             label4.TabIndex = 3;
             label4.Text = "Precio:";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(39, 120);
-            label3.Name = "label3";
-            label3.Size = new Size(83, 22);
-            label3.TabIndex = 2;
-            label3.Text = "Código:";
-            // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(169, 51);
+            txtNombre.Location = new Point(199, 24);
             txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(253, 30);
@@ -155,7 +142,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(39, 55);
+            label2.Location = new Point(80, 32);
             label2.Name = "label2";
             label2.Size = new Size(89, 22);
             label2.TabIndex = 0;
@@ -185,6 +172,7 @@
             btnAgregar.TabIndex = 3;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnModificar
             // 
@@ -228,6 +216,38 @@
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(48, 190);
+            label3.Name = "label3";
+            label3.Size = new Size(103, 22);
+            label3.TabIndex = 10;
+            label3.Text = "Existencia:";
+            // 
+            // txtexistencia
+            // 
+            txtexistencia.Location = new Point(199, 187);
+            txtexistencia.Name = "txtexistencia";
+            txtexistencia.Size = new Size(253, 30);
+            txtexistencia.TabIndex = 11;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(6, 248);
+            label6.Name = "label6";
+            label6.Size = new Size(170, 22);
+            label6.TabIndex = 12;
+            label6.Text = "Id del proveedor:";
+            // 
+            // txtIdProveedor
+            // 
+            txtIdProveedor.Location = new Point(199, 245);
+            txtIdProveedor.Name = "txtIdProveedor";
+            txtIdProveedor.Size = new Size(253, 30);
+            txtIdProveedor.TabIndex = 13;
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -262,10 +282,8 @@
         private PictureBox pictureBox1;
         private TextBox txtCosto;
         private TextBox txtPrecio;
-        private TextBox txtCodigo;
         private Label label5;
         private Label label4;
-        private Label label3;
         private TextBox txtNombre;
         private Label label2;
         private DataGridView dgvProductos;
@@ -273,5 +291,9 @@
         private Button btnModificar;
         private Button btnGuardar;
         private Button btnEliminar;
+        private TextBox txtIdProveedor;
+        private Label label6;
+        private TextBox txtexistencia;
+        private Label label3;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using InventarioAPI.Models.ProductoDto;
+using InventarioAPI.Models.ProveedorDto;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -44,5 +45,31 @@ namespace JuanitoSA
             }
         }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AddProducto();
+        }
+
+        public async void AddProducto()
+        {
+            CreateProductoDto oproduct = new CreateProductoDto();
+            oproduct.Nombre = txtNombre.Text;
+            oproduct.Precio = Convert.ToDecimal(txtPrecio.Text);
+            oproduct.Existencia = Convert.ToInt32(txtexistencia.Text);
+            oproduct.Id_Proveedor = Convert.ToInt32(txtIdProveedor.Text);
+            oproduct.Costo = Convert.ToDecimal(txtCosto.Text);   
+            using (var client = new HttpClient())
+            {
+                var serializedStudent = JsonConvert.SerializeObject(oproduct);
+                var content = new StringContent(serializedStudent, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync("https://localhost:7220/api/Producto", content);
+                if (response.IsSuccessStatusCode)
+                    MessageBox.Show("Producto agregado");
+                else
+                    MessageBox.Show($"Error al guardar el producto: {response.Content.ReadAsStringAsync().Result}");
+            }
+
+            GetallProducts();
+        }
     }
 }
