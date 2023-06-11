@@ -61,7 +61,7 @@ namespace InventarioAPI.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<ProductoDto>> AddProveedor([FromBody] CreateProductoDto productoCreateDto)
+        public async Task<ActionResult<ProductoDto>> AddProducto([FromBody] CreateProductoDto productoCreateDto)
         {
             if (!ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace InventarioAPI.Controllers
 
             await _productoRepo.Add(modelo);
 
-            return CreatedAtRoute("GetProducto", new { id = modelo.Nombre}, modelo);
+            return CreatedAtRoute("GetProducto", new { id = modelo.Id}, modelo);
         }
 
         [HttpDelete("{id:int}")]
