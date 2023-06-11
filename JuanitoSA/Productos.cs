@@ -57,7 +57,7 @@ namespace JuanitoSA
             oproduct.Precio = Convert.ToDecimal(txtPrecio.Text);
             oproduct.Existencia = Convert.ToInt32(txtexistencia.Text);
             oproduct.Id_Proveedor = Convert.ToInt32(txtIdProveedor.Text);
-            oproduct.Costo = Convert.ToDecimal(txtCosto.Text);   
+            oproduct.Costo = Convert.ToDecimal(txtCosto.Text);
             using (var client = new HttpClient())
             {
                 var serializedStudent = JsonConvert.SerializeObject(oproduct);

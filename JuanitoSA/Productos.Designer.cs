@@ -30,6 +30,10 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            txtIdProveedor = new TextBox();
+            label6 = new Label();
+            txtexistencia = new TextBox();
+            label3 = new Label();
             pictureBox1 = new PictureBox();
             txtCosto = new TextBox();
             txtPrecio = new TextBox();
@@ -40,12 +44,7 @@
             dgvProductos = new DataGridView();
             btnAgregar = new Button();
             btnModificar = new Button();
-            btnGuardar = new Button();
             btnEliminar = new Button();
-            label3 = new Label();
-            txtexistencia = new TextBox();
-            label6 = new Label();
-            txtIdProveedor = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
@@ -85,6 +84,38 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Productos";
+            // 
+            // txtIdProveedor
+            // 
+            txtIdProveedor.Location = new Point(199, 245);
+            txtIdProveedor.Name = "txtIdProveedor";
+            txtIdProveedor.Size = new Size(253, 30);
+            txtIdProveedor.TabIndex = 13;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(6, 248);
+            label6.Name = "label6";
+            label6.Size = new Size(170, 22);
+            label6.TabIndex = 12;
+            label6.Text = "Id del proveedor:";
+            // 
+            // txtexistencia
+            // 
+            txtexistencia.Location = new Point(199, 187);
+            txtexistencia.Name = "txtexistencia";
+            txtexistencia.Size = new Size(253, 30);
+            txtexistencia.TabIndex = 11;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(48, 190);
+            label3.Name = "label3";
+            label3.Size = new Size(103, 22);
+            label3.TabIndex = 10;
+            label3.Text = "Existencia:";
             // 
             // pictureBox1
             // 
@@ -151,12 +182,12 @@
             // dgvProductos
             // 
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(275, 464);
+            dgvProductos.Location = new Point(248, 470);
             dgvProductos.Margin = new Padding(3, 4, 3, 4);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 51;
             dgvProductos.RowTemplate.Height = 25;
-            dgvProductos.Size = new Size(502, 296);
+            dgvProductos.Size = new Size(622, 296);
             dgvProductos.TabIndex = 2;
             // 
             // btnAgregar
@@ -180,27 +211,13 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(326, 383);
+            btnModificar.Location = new Point(446, 383);
             btnModificar.Margin = new Padding(3, 4, 3, 4);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(149, 49);
             btnModificar.TabIndex = 4;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.BackColor = Color.MediumBlue;
-            btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(534, 383);
-            btnGuardar.Margin = new Padding(3, 4, 3, 4);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(149, 49);
-            btnGuardar.TabIndex = 5;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = false;
             // 
             // btnEliminar
             // 
@@ -216,38 +233,6 @@
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(48, 190);
-            label3.Name = "label3";
-            label3.Size = new Size(103, 22);
-            label3.TabIndex = 10;
-            label3.Text = "Existencia:";
-            // 
-            // txtexistencia
-            // 
-            txtexistencia.Location = new Point(199, 187);
-            txtexistencia.Name = "txtexistencia";
-            txtexistencia.Size = new Size(253, 30);
-            txtexistencia.TabIndex = 11;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(6, 248);
-            label6.Name = "label6";
-            label6.Size = new Size(170, 22);
-            label6.TabIndex = 12;
-            label6.Text = "Id del proveedor:";
-            // 
-            // txtIdProveedor
-            // 
-            txtIdProveedor.Location = new Point(199, 245);
-            txtIdProveedor.Name = "txtIdProveedor";
-            txtIdProveedor.Size = new Size(253, 30);
-            txtIdProveedor.TabIndex = 13;
-            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -255,7 +240,6 @@
             BackColor = Color.FromArgb(28, 37, 48);
             ClientSize = new Size(1097, 805);
             Controls.Add(btnEliminar);
-            Controls.Add(btnGuardar);
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
             Controls.Add(dgvProductos);
@@ -289,7 +273,6 @@
         private DataGridView dgvProductos;
         private Button btnAgregar;
         private Button btnModificar;
-        private Button btnGuardar;
         private Button btnEliminar;
         private TextBox txtIdProveedor;
         private Label label6;
