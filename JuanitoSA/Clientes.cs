@@ -33,7 +33,7 @@ namespace JuanitoSA
                     }
                     else
                     {
-                        MessageBox.Show($"No se puede obtener la lista de Productos: {response.StatusCode}");
+                        MessageBox.Show($"No se puede obtener la lista de los Proveedores: {response.StatusCode}");
                     }
                 }
             }

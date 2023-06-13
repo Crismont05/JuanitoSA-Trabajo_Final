@@ -89,9 +89,9 @@ namespace JuanitoSA
                 var response = await client.DeleteAsync(String.Format("{0}/{1}",
                     "https://localhost:7220/api/Producto", id));
                 if (response.IsSuccessStatusCode)
-                    MessageBox.Show("Estudiante eliminado con éxito");
+                    MessageBox.Show("Producto Eliminado con éxito");
                 else
-                    MessageBox.Show($"No se pudo eliminar el estudiante: {response.StatusCode}");
+                    MessageBox.Show($"El producto no pudo ser eliminado: {response.StatusCode}");
             }
             clear();
             GetallProducts();
