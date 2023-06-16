@@ -120,7 +120,7 @@ namespace InventarioAPI.Controllers
 
             Producto modelo = _mapper.Map<Producto>(productoUpdateDto);
 
-            _productoRepo.Update(modelo);
+            await _productoRepo.Update(modelo);
 
             return NoContent();
         }

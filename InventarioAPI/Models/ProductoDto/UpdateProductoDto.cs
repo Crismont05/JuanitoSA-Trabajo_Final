@@ -16,6 +16,7 @@ namespace InventarioAPI.Models.ProductoDto
         public decimal Costo { get; set; }
         [Required]
         public decimal Precio { get; set; }
+        [Required]
         public int Id_Proveedor { get; set; }
     }
 }

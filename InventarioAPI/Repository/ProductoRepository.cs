@@ -15,7 +15,7 @@ namespace InventarioAPI.Repository
 
         public async Task<Producto> Update(Producto entity)
         {
-            _db.Productos.Add(entity);
+            _db.Productos.Update(entity);
             await _db.SaveChangesAsync();
             return entity;
         }
