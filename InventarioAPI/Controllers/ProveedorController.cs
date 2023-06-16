@@ -118,7 +118,7 @@ namespace InventarioAPI.Controllers
 
             Proveedor modelo = _mapper.Map<Proveedor>(proveedorUpdateDto);
 
-            _proveedorRepo.Update(modelo);
+            await _proveedorRepo.Update(modelo);
 
             return NoContent();
         }
