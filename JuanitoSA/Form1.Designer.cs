@@ -68,18 +68,16 @@
             panelMenuVertical.Controls.Add(btnInicio);
             panelMenuVertical.Dock = DockStyle.Left;
             panelMenuVertical.Location = new Point(0, 0);
-            panelMenuVertical.Margin = new Padding(3, 4, 3, 4);
             panelMenuVertical.Name = "panelMenuVertical";
-            panelMenuVertical.Size = new Size(88, 715);
+            panelMenuVertical.Size = new Size(77, 536);
             panelMenuVertical.TabIndex = 0;
             // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(26, 457);
-            pictureBox4.Margin = new Padding(3, 4, 3, 4);
+            pictureBox4.Location = new Point(23, 343);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(58, 55);
+            pictureBox4.Size = new Size(51, 41);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 5;
             pictureBox4.TabStop = false;
@@ -87,10 +85,9 @@
             // panel3
             // 
             panel3.BackColor = Color.MediumBlue;
-            panel3.Location = new Point(0, 439);
-            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Location = new Point(0, 329);
             panel3.Name = "panel3";
-            panel3.Size = new Size(19, 84);
+            panel3.Size = new Size(17, 63);
             panel3.TabIndex = 6;
             // 
             // btnVentas
@@ -98,10 +95,9 @@
             btnVentas.FlatStyle = FlatStyle.Flat;
             btnVentas.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnVentas.ForeColor = Color.White;
-            btnVentas.Location = new Point(0, 439);
-            btnVentas.Margin = new Padding(3, 4, 3, 4);
+            btnVentas.Location = new Point(0, 329);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(277, 84);
+            btnVentas.Size = new Size(242, 63);
             btnVentas.TabIndex = 7;
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = true;
@@ -110,10 +106,9 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.people_blue;
-            pictureBox3.Location = new Point(26, 352);
-            pictureBox3.Margin = new Padding(3, 4, 3, 4);
+            pictureBox3.Location = new Point(23, 264);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(58, 52);
+            pictureBox3.Size = new Size(51, 39);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
@@ -121,10 +116,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.Investor_Icons_01;
-            pictureBox2.Location = new Point(26, 248);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Location = new Point(23, 186);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(58, 52);
+            pictureBox2.Size = new Size(51, 39);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
@@ -132,19 +126,17 @@
             // panel2
             // 
             panel2.BackColor = Color.MediumBlue;
-            panel2.Location = new Point(0, 331);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(0, 248);
             panel2.Name = "panel2";
-            panel2.Size = new Size(19, 88);
+            panel2.Size = new Size(17, 66);
             panel2.TabIndex = 3;
             // 
             // panel1
             // 
             panel1.BackColor = Color.MediumBlue;
-            panel1.Location = new Point(0, 227);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(0, 170);
             panel1.Name = "panel1";
-            panel1.Size = new Size(19, 84);
+            panel1.Size = new Size(17, 63);
             panel1.TabIndex = 0;
             // 
             // btnClientes
@@ -152,10 +144,9 @@
             btnClientes.FlatStyle = FlatStyle.Flat;
             btnClientes.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnClientes.ForeColor = Color.White;
-            btnClientes.Location = new Point(0, 331);
-            btnClientes.Margin = new Padding(3, 4, 3, 4);
+            btnClientes.Location = new Point(0, 248);
             btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(298, 88);
+            btnClientes.Size = new Size(261, 66);
             btnClientes.TabIndex = 2;
             btnClientes.Text = "Proveedores";
             btnClientes.UseVisualStyleBackColor = true;
@@ -166,10 +157,9 @@
             btnProductos.FlatStyle = FlatStyle.Flat;
             btnProductos.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnProductos.ForeColor = Color.White;
-            btnProductos.Location = new Point(0, 227);
-            btnProductos.Margin = new Padding(3, 4, 3, 4);
+            btnProductos.Location = new Point(0, 170);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(277, 84);
+            btnProductos.Size = new Size(242, 63);
             btnProductos.TabIndex = 1;
             btnProductos.Text = "Productos";
             btnProductos.UseVisualStyleBackColor = true;
@@ -180,13 +170,11 @@
             btnInicio.Dock = DockStyle.Top;
             btnInicio.Image = Properties.Resources.logo_transparent2;
             btnInicio.Location = new Point(0, 0);
-            btnInicio.Margin = new Padding(3, 4, 3, 4);
             btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(88, 106);
+            btnInicio.Size = new Size(77, 132);
             btnInicio.SizeMode = PictureBoxSizeMode.StretchImage;
             btnInicio.TabIndex = 0;
             btnInicio.TabStop = false;
-            btnInicio.Click += btnInicio_Click;
             // 
             // panelBarraTitulo
             // 
@@ -194,19 +182,17 @@
             panelBarraTitulo.Controls.Add(pictureBox6);
             panelBarraTitulo.Controls.Add(label1);
             panelBarraTitulo.Dock = DockStyle.Top;
-            panelBarraTitulo.Location = new Point(88, 0);
-            panelBarraTitulo.Margin = new Padding(3, 4, 3, 4);
+            panelBarraTitulo.Location = new Point(77, 0);
             panelBarraTitulo.Name = "panelBarraTitulo";
-            panelBarraTitulo.Size = new Size(1032, 55);
+            panelBarraTitulo.Size = new Size(903, 41);
             panelBarraTitulo.TabIndex = 1;
             // 
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.menu;
-            pictureBox6.Location = new Point(0, 8);
-            pictureBox6.Margin = new Padding(3, 4, 3, 4);
+            pictureBox6.Location = new Point(0, 6);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(57, 43);
+            pictureBox6.Size = new Size(50, 32);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
@@ -216,9 +202,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(139, 12);
+            label1.Location = new Point(122, 9);
             label1.Name = "label1";
-            label1.Size = new Size(457, 30);
+            label1.Size = new Size(360, 22);
             label1.TabIndex = 0;
             label1.Text = "SISTEMA DE INVENTARIOS JUANITO S.A";
             // 
@@ -226,22 +212,20 @@
             // 
             panelContenedor.BackColor = Color.FromArgb(64, 64, 64);
             panelContenedor.Dock = DockStyle.Fill;
-            panelContenedor.Location = new Point(88, 55);
-            panelContenedor.Margin = new Padding(3, 4, 3, 4);
+            panelContenedor.Location = new Point(77, 41);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(1032, 660);
+            panelContenedor.Size = new Size(903, 495);
             panelContenedor.TabIndex = 2;
             panelContenedor.Paint += panelContenedor_Paint;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1120, 715);
+            ClientSize = new Size(980, 536);
             Controls.Add(panelContenedor);
             Controls.Add(panelBarraTitulo);
             Controls.Add(panelMenuVertical);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

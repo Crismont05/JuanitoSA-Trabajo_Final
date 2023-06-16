@@ -204,7 +204,7 @@
             // txtDireccion
             // 
             txtDireccion.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDireccion.ForeColor = Color.White;
+            txtDireccion.ForeColor = Color.Black;
             txtDireccion.Location = new Point(87, 148);
             txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";
@@ -270,7 +270,7 @@
             // txtIDCliente
             // 
             txtIDCliente.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtIDCliente.ForeColor = Color.White;
+            txtIDCliente.ForeColor = Color.Black;
             txtIDCliente.Location = new Point(101, 105);
             txtIDCliente.Name = "txtIDCliente";
             txtIDCliente.Size = new Size(227, 22);
@@ -279,7 +279,7 @@
             // txtApellido
             // 
             txtApellido.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtApellido.ForeColor = Color.White;
+            txtApellido.ForeColor = Color.Black;
             txtApellido.Location = new Point(101, 67);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(227, 22);
@@ -288,7 +288,7 @@
             // txtNombre
             // 
             txtNombre.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNombre.ForeColor = Color.White;
+            txtNombre.ForeColor = Color.Black;
             txtNombre.Location = new Point(101, 33);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(227, 22);
