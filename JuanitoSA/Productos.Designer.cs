@@ -182,10 +182,12 @@
             dgvProductos.AllowUserToDeleteRows = false;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Location = new Point(217, 352);
+            dgvProductos.MultiSelect = false;
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersWidth = 51;
             dgvProductos.RowTemplate.Height = 25;
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProductos.Size = new Size(544, 222);
             dgvProductos.TabIndex = 2;
             dgvProductos.CellContentClick += dgvProductos_CellContentClick;

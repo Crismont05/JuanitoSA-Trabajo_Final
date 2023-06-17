@@ -380,6 +380,8 @@
             // 
             // dgvListado
             // 
+            dgvListado.AllowUserToAddRows = false;
+            dgvListado.AllowUserToDeleteRows = false;
             dgvListado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvListado.Location = new Point(2, 6);
             dgvListado.MultiSelect = false;
