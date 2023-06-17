@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,7 @@ namespace JuanitoSA
             oproduct.Existencia = Convert.ToInt32(txtexistencia.Text);
             oproduct.Id_Proveedor = Convert.ToInt32(txtIdProveedor.Text);
             oproduct.Costo = Convert.ToDecimal(txtCosto.Text);
+
             using (var client = new HttpClient())
             {
                 var serializedStudent = JsonConvert.SerializeObject(oproduct);
@@ -69,15 +71,15 @@ namespace JuanitoSA
                 else
                     MessageBox.Show($"Error al guardar el producto: {response.Content.ReadAsStringAsync().Result}");
             }
-            
+
             GetallProducts();
             clear();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(id!=0)
-            Deleteproduct(id);
+            if (id != 0)
+                Deleteproduct(id);
         }
 
         private async void Deleteproduct(int id)
@@ -141,7 +143,43 @@ namespace JuanitoSA
             txtNombre.Text = string.Empty;
             txtexistencia.Text = string.Empty;
             txtIdProveedor.Text = string.Empty;
-            id = 0; 
+            id = 0;
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            UpdateProduct();
+        }
+
+        private async void UpdateProduct()
+        {
+
+            UpdateProductoDto productoDto = new UpdateProductoDto();
+            productoDto.Costo = Convert.ToDecimal(txtCosto.Text);
+            productoDto.Nombre = txtNombre.Text;
+            productoDto.Existencia = Convert.ToInt32(txtexistencia.Text);
+            productoDto.Precio = Convert.ToDecimal(txtPrecio.Text);
+            productoDto.Id_Proveedor = Convert.ToInt32(txtIdProveedor.Text);
+            productoDto.Id = id;
+
+
+            using (var client = new HttpClient())
+            {
+                var producto = JsonConvert.SerializeObject(productoDto);
+                var content = new StringContent(producto, Encoding.UTF8, "application/json");
+                var response = await client.PutAsync(String.Format("{0}/{1}", "https://localhost:7220/api/Producto", id), content);
+                if (response.IsSuccessStatusCode)
+                    MessageBox.Show("Producto actualizado");
+                else
+                    MessageBox.Show($"Error al actualizar el producto: {response.StatusCode}");
+            }
+            clear();
+            GetallProducts();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            clear();
         }
     }
 }
