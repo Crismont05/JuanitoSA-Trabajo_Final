@@ -39,9 +39,9 @@
             label7 = new Label();
             pictureBox1 = new PictureBox();
             groupBox1 = new GroupBox();
+            txtNacionalidad = new TextBox();
             txtDireccion = new TextBox();
             label9 = new Label();
-            lbNacionalidad = new ListBox();
             label6 = new Label();
             rbFemenino = new RadioButton();
             rbMasculino = new RadioButton();
@@ -54,7 +54,7 @@
             label2 = new Label();
             tabPage2 = new TabPage();
             button3 = new Button();
-            button1 = new Button();
+            btnDelete = new Button();
             dgvListado = new DataGridView();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -181,9 +181,9 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(64, 64, 64);
+            groupBox1.Controls.Add(txtNacionalidad);
             groupBox1.Controls.Add(txtDireccion);
             groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(lbNacionalidad);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(rbFemenino);
             groupBox1.Controls.Add(rbMasculino);
@@ -201,6 +201,13 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de Proveedores";
+            // 
+            // txtNacionalidad
+            // 
+            txtNacionalidad.Location = new Point(113, 286);
+            txtNacionalidad.Name = "txtNacionalidad";
+            txtNacionalidad.Size = new Size(215, 22);
+            txtNacionalidad.TabIndex = 13;
             // 
             // txtDireccion
             // 
@@ -222,16 +229,6 @@
             label9.Size = new Size(73, 17);
             label9.TabIndex = 11;
             label9.Text = "Dirección:";
-            // 
-            // lbNacionalidad
-            // 
-            lbNacionalidad.FormattingEnabled = true;
-            lbNacionalidad.ItemHeight = 16;
-            lbNacionalidad.Items.AddRange(new object[] { "Honduras", "Guatemala", "San Salvador", "Nicaragua", "Costa Rica", "Panamá" });
-            lbNacionalidad.Location = new Point(113, 289);
-            lbNacionalidad.Name = "lbNacionalidad";
-            lbNacionalidad.Size = new Size(176, 20);
-            lbNacionalidad.TabIndex = 10;
             // 
             // label6
             // 
@@ -345,7 +342,7 @@
             // 
             tabPage2.BackColor = Color.FromArgb(28, 37, 48);
             tabPage2.Controls.Add(button3);
-            tabPage2.Controls.Add(button1);
+            tabPage2.Controls.Add(btnDelete);
             tabPage2.Controls.Add(dgvListado);
             tabPage2.Location = new Point(4, 26);
             tabPage2.Name = "tabPage2";
@@ -367,25 +364,29 @@
             button3.Text = "Modificar";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnDelete
             // 
-            button1.BackColor = Color.FromArgb(28, 37, 48);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(419, 410);
-            button1.Name = "button1";
-            button1.Size = new Size(117, 36);
-            button1.TabIndex = 7;
-            button1.Text = "Eliminar";
-            button1.UseVisualStyleBackColor = false;
+            btnDelete.BackColor = Color.FromArgb(28, 37, 48);
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(419, 410);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(117, 36);
+            btnDelete.TabIndex = 7;
+            btnDelete.Text = "Eliminar";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // dgvListado
             // 
             dgvListado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvListado.Location = new Point(2, 6);
+            dgvListado.MultiSelect = false;
             dgvListado.Name = "dgvListado";
+            dgvListado.ReadOnly = true;
             dgvListado.RowTemplate.Height = 25;
+            dgvListado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvListado.Size = new Size(733, 389);
             dgvListado.TabIndex = 0;
             dgvListado.CellContentClick += dgvListado_CellContentClick;
@@ -431,7 +432,6 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private ListBox lbNacionalidad;
         private Label label6;
         private GroupBox groupBox2;
         private PictureBox pictureBox1;
@@ -441,9 +441,10 @@
         private Button btnAgregar;
         private TextBox txtDireccion;
         private Label label9;
-        private Button button1;
+        private Button btnDelete;
         private Button button3;
         private DataGridView dgvListado;
         private DateTimePicker dtpBirthDate;
+        private TextBox txtNacionalidad;
     }
 }

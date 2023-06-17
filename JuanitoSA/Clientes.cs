@@ -54,14 +54,14 @@ namespace JuanitoSA
 
         private async void AddProvider()
         {
-            if (txtNombre.Text != "" && txtApellido.Text != "" && txtIDProvider.Text != "" && txtDireccion.Text != "" && txtNumero.Text != "")
+            if (txtNombre.Text != "" && txtApellido.Text != "" && txtIDProvider.Text != "" && txtDireccion.Text != "" && txtNumero.Text != "" && txtNacionalidad.Text != "")
             {
                 CreateProveedorDto provider = new CreateProveedorDto();
                 provider.Nombre = txtNombre.Text;
                 provider.Apellido = txtApellido.Text;
                 provider.Id = int.Parse(txtIDProvider.Text);
                 provider.Direccion = txtDireccion.Text;
-                if (rbMasculino.Checked)
+                if (rbMasculino.Checked == true)
                 {
                     provider.Sexo = 'm';
                 }
@@ -69,8 +69,8 @@ namespace JuanitoSA
                 {
                     provider.Sexo = 'f';
                 }
-                provider.Nacionalidad = lbNacionalidad.Text;
-                provider.Nacionalidad = dtpBirthDate.Value.ToShortDateString();
+                provider.Nacionalidad = txtNacionalidad.Text;
+                provider.Nacimiento = dtpBirthDate.Value;
                 provider.Telefono = txtNumero.Text;
                 using (var client = new HttpClient())
                 {
@@ -100,6 +100,7 @@ namespace JuanitoSA
             txtDireccion.Clear();
             txtIDProvider.Clear();
             txtNumero.Clear();
+            id = 0;
         }
 
         private void dgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -116,34 +117,55 @@ namespace JuanitoSA
 
         private async void GetProviderByID(int id)
         {
-            using(var client = new HttpClient()) 
+            using (var client = new HttpClient())
             {
                 var response = await client.GetAsync(String.Format("{0}/{1}", "https://localhost:7220/api/Proveedor", id));
-                if(response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode)
                 {
                     var proveedor = await response.Content.ReadAsStringAsync();
-                    Proveedor provider = JsonConvert.DeserializeObject<Proveedor>(proveedor);
+                    ProveedorDto provider = JsonConvert.DeserializeObject<ProveedorDto>(proveedor);
                     txtNombre.Text = provider.Nombre;
                     txtApellido.Text = provider.Apellido;
                     txtIDProvider.Text = provider.Id.ToString();
                     txtDireccion.Text = provider.Direccion;
                     txtNumero.Text = provider.Telefono;
-                    lbNacionalidad.Text = provider.Nacionalidad;
-                    dtpBirthDate.Value = provider.Nacimiento;
-                    if(provider.Sexo == 'm')
+                    txtNacionalidad.Text = provider.Nacionalidad;
+                    if (provider.Sexo == 'm')
                     {
                         rbMasculino.Checked = true;
                         rbFemenino.Checked = false;
-                    }    
+                    }
                     else
                     {
-                        rbMasculino.Checked = false;
                         rbFemenino.Checked = true;
+                        rbMasculino.Checked = false;
                     }
+                    dtpBirthDate.Value = provider.Nacimiento;
                 }
                 else
                     MessageBox.Show($"No se puede obtener el proveedor: {response.StatusCode}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+        private async void Deleteprovider(int id)
+        {
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7220/api/Proveedor");
+                var response = await client.DeleteAsync(String.Format("{0}/{1}",
+                    "https://localhost:7220/api/Proveedor", id));
+                if (response.IsSuccessStatusCode)
+                    MessageBox.Show("Proveedor Eliminado con éxito");
+                else
+                    MessageBox.Show($"El proveedor no pudo ser eliminado: {response.StatusCode}");
+            }
+            Clear();
+            GetAllProviders();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Deleteprovider(id);
         }
     }
 }
