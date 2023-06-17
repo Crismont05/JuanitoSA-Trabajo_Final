@@ -33,19 +33,19 @@
             tabPage1 = new TabPage();
             btnAgregar = new Button();
             groupBox2 = new GroupBox();
+            dtpBirthDate = new DateTimePicker();
             txtNumero = new TextBox();
             label8 = new Label();
-            txtFecha_Nacimiento = new TextBox();
             label7 = new Label();
             pictureBox1 = new PictureBox();
             groupBox1 = new GroupBox();
             txtDireccion = new TextBox();
             label9 = new Label();
-            listBox1 = new ListBox();
+            lbNacionalidad = new ListBox();
             label6 = new Label();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
-            txtIDCliente = new TextBox();
+            rbFemenino = new RadioButton();
+            rbMasculino = new RadioButton();
+            txtIDProvider = new TextBox();
             txtApellido = new TextBox();
             txtNombre = new TextBox();
             label5 = new Label();
@@ -55,7 +55,6 @@
             tabPage2 = new TabPage();
             button3 = new Button();
             button1 = new Button();
-            button2 = new Button();
             dgvListado = new DataGridView();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -114,13 +113,14 @@
             btnAgregar.TabIndex = 2;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // groupBox2
             // 
             groupBox2.BackColor = Color.FromArgb(64, 64, 64);
+            groupBox2.Controls.Add(dtpBirthDate);
             groupBox2.Controls.Add(txtNumero);
             groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(txtFecha_Nacimiento);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(pictureBox1);
             groupBox2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -131,11 +131,19 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del Perfil";
             // 
+            // dtpBirthDate
+            // 
+            dtpBirthDate.AllowDrop = true;
+            dtpBirthDate.Location = new Point(18, 229);
+            dtpBirthDate.Name = "dtpBirthDate";
+            dtpBirthDate.Size = new Size(200, 23);
+            dtpBirthDate.TabIndex = 7;
+            // 
             // txtNumero
             // 
             txtNumero.Location = new Point(18, 284);
             txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(183, 23);
+            txtNumero.Size = new Size(200, 23);
             txtNumero.TabIndex = 6;
             // 
             // label8
@@ -148,13 +156,6 @@
             label8.Size = new Size(153, 17);
             label8.TabIndex = 5;
             label8.Text = "Número de Contacto:";
-            // 
-            // txtFecha_Nacimiento
-            // 
-            txtFecha_Nacimiento.Location = new Point(18, 225);
-            txtFecha_Nacimiento.Name = "txtFecha_Nacimiento";
-            txtFecha_Nacimiento.Size = new Size(183, 23);
-            txtFecha_Nacimiento.TabIndex = 4;
             // 
             // label7
             // 
@@ -182,11 +183,11 @@
             groupBox1.BackColor = Color.FromArgb(64, 64, 64);
             groupBox1.Controls.Add(txtDireccion);
             groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(listBox1);
+            groupBox1.Controls.Add(lbNacionalidad);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
-            groupBox1.Controls.Add(txtIDCliente);
+            groupBox1.Controls.Add(rbFemenino);
+            groupBox1.Controls.Add(rbMasculino);
+            groupBox1.Controls.Add(txtIDProvider);
             groupBox1.Controls.Add(txtApellido);
             groupBox1.Controls.Add(txtNombre);
             groupBox1.Controls.Add(label5);
@@ -222,15 +223,15 @@
             label9.TabIndex = 11;
             label9.Text = "Dirección:";
             // 
-            // listBox1
+            // lbNacionalidad
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 16;
-            listBox1.Items.AddRange(new object[] { "Honduras", "Guatemala", "San Salvador", "Nicaragua", "Costa Rica", "Panamá" });
-            listBox1.Location = new Point(113, 289);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(176, 20);
-            listBox1.TabIndex = 10;
+            lbNacionalidad.FormattingEnabled = true;
+            lbNacionalidad.ItemHeight = 16;
+            lbNacionalidad.Items.AddRange(new object[] { "Honduras", "Guatemala", "San Salvador", "Nicaragua", "Costa Rica", "Panamá" });
+            lbNacionalidad.Location = new Point(113, 289);
+            lbNacionalidad.Name = "lbNacionalidad";
+            lbNacionalidad.Size = new Size(176, 20);
+            lbNacionalidad.TabIndex = 10;
             // 
             // label6
             // 
@@ -243,38 +244,40 @@
             label6.TabIndex = 9;
             label6.Text = "Nacionalidad:";
             // 
-            // radioButton2
+            // rbFemenino
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton2.ForeColor = Color.White;
-            radioButton2.Location = new Point(87, 250);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(84, 21);
-            radioButton2.TabIndex = 8;
-            radioButton2.Text = "Femenino";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbFemenino.AutoSize = true;
+            rbFemenino.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbFemenino.ForeColor = Color.White;
+            rbFemenino.Location = new Point(87, 250);
+            rbFemenino.Name = "rbFemenino";
+            rbFemenino.Size = new Size(84, 21);
+            rbFemenino.TabIndex = 8;
+            rbFemenino.Text = "Femenino";
+            rbFemenino.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbMasculino
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton1.ForeColor = Color.White;
-            radioButton1.Location = new Point(87, 225);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(86, 21);
-            radioButton1.TabIndex = 7;
-            radioButton1.Text = "Masculino";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbMasculino.AutoSize = true;
+            rbMasculino.Checked = true;
+            rbMasculino.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rbMasculino.ForeColor = Color.White;
+            rbMasculino.Location = new Point(87, 225);
+            rbMasculino.Name = "rbMasculino";
+            rbMasculino.Size = new Size(86, 21);
+            rbMasculino.TabIndex = 7;
+            rbMasculino.TabStop = true;
+            rbMasculino.Text = "Masculino";
+            rbMasculino.UseVisualStyleBackColor = true;
             // 
-            // txtIDCliente
+            // txtIDProvider
             // 
-            txtIDCliente.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtIDCliente.ForeColor = Color.Black;
-            txtIDCliente.Location = new Point(101, 105);
-            txtIDCliente.Name = "txtIDCliente";
-            txtIDCliente.Size = new Size(227, 22);
-            txtIDCliente.TabIndex = 6;
+            txtIDProvider.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtIDProvider.ForeColor = Color.Black;
+            txtIDProvider.Location = new Point(101, 105);
+            txtIDProvider.Name = "txtIDProvider";
+            txtIDProvider.Size = new Size(227, 22);
+            txtIDProvider.TabIndex = 6;
             // 
             // txtApellido
             // 
@@ -343,7 +346,6 @@
             tabPage2.BackColor = Color.FromArgb(28, 37, 48);
             tabPage2.Controls.Add(button3);
             tabPage2.Controls.Add(button1);
-            tabPage2.Controls.Add(button2);
             tabPage2.Controls.Add(dgvListado);
             tabPage2.Location = new Point(4, 26);
             tabPage2.Name = "tabPage2";
@@ -358,7 +360,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(140, 410);
+            button3.Location = new Point(243, 410);
             button3.Name = "button3";
             button3.Size = new Size(117, 36);
             button3.TabIndex = 8;
@@ -371,25 +373,12 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(447, 410);
+            button1.Location = new Point(419, 410);
             button1.Name = "button1";
             button1.Size = new Size(117, 36);
             button1.TabIndex = 7;
             button1.Text = "Eliminar";
             button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(28, 37, 48);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(288, 410);
-            button2.Name = "button2";
-            button2.Size = new Size(117, 36);
-            button2.TabIndex = 6;
-            button2.Text = "Guardar";
-            button2.UseVisualStyleBackColor = false;
             // 
             // dgvListado
             // 
@@ -399,6 +388,7 @@
             dgvListado.RowTemplate.Height = 25;
             dgvListado.Size = new Size(733, 389);
             dgvListado.TabIndex = 0;
+            dgvListado.CellContentClick += dgvListado_CellContentClick;
             // 
             // Clientes
             // 
@@ -432,29 +422,28 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private GroupBox groupBox1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private TextBox txtIDCliente;
+        private RadioButton rbFemenino;
+        private RadioButton rbMasculino;
+        private TextBox txtIDProvider;
         private TextBox txtApellido;
         private TextBox txtNombre;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
-        private ListBox listBox1;
+        private ListBox lbNacionalidad;
         private Label label6;
         private GroupBox groupBox2;
         private PictureBox pictureBox1;
         private TextBox txtNumero;
         private Label label8;
-        private TextBox txtFecha_Nacimiento;
         private Label label7;
         private Button btnAgregar;
         private TextBox txtDireccion;
         private Label label9;
         private Button button1;
-        private Button button2;
         private Button button3;
         private DataGridView dgvListado;
+        private DateTimePicker dtpBirthDate;
     }
 }
