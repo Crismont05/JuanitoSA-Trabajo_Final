@@ -54,7 +54,7 @@ namespace JuanitoSA
 
         private async void AddProvider()
         {
-            if (txtNombre.Text != "" && txtApellido.Text != "" && txtIDProvider.Text != "" && txtDireccion.Text != "" && txtNumero.Text != "" && txtNacionalidad.Text != "")
+            if (txtNombre.Text != "" || txtApellido.Text != "" || txtIDProvider.Text != "" || txtDireccion.Text != "" || txtNumero.Text != "" || txtNacionalidad.Text != "")
             {
                 CreateProveedorDto provider = new CreateProveedorDto();
                 provider.Nombre = txtNombre.Text;
