@@ -54,26 +54,41 @@ namespace JuanitoSA
 
         public async void AddProducto()
         {
-            CreateProductoDto oproduct = new CreateProductoDto();
-            oproduct.Nombre = txtNombre.Text;
-            oproduct.Precio = Convert.ToDecimal(txtPrecio.Text);
-            oproduct.Existencia = Convert.ToInt32(txtexistencia.Text);
-            oproduct.Id_Proveedor = Convert.ToInt32(txtIdProveedor.Text);
-            oproduct.Costo = Convert.ToDecimal(txtCosto.Text);
-
-            using (var client = new HttpClient())
+            try
             {
-                var serializedStudent = JsonConvert.SerializeObject(oproduct);
-                var content = new StringContent(serializedStudent, Encoding.UTF8, "application/json");
-                var response = await client.PostAsync("https://localhost:7220/api/Producto", content);
-                if (response.IsSuccessStatusCode)
-                    MessageBox.Show("Producto agregado");
-                else
-                    MessageBox.Show($"Error al guardar el producto: {response.Content.ReadAsStringAsync().Result}");
-            }
+                if (txtCosto.Text != "" || txtexistencia.Text != "" || txtIdProveedor.Text != "" || txtNombre.Text != "" || txtPrecio.Text != "")
+                {
+                    CreateProductoDto oproduct = new CreateProductoDto();
+                    oproduct.Nombre = txtNombre.Text;
+                    oproduct.Precio = Convert.ToDecimal(txtPrecio.Text);
+                    oproduct.Existencia = Convert.ToInt32(txtexistencia.Text);
+                    oproduct.Id_Proveedor = Convert.ToInt32(txtIdProveedor.Text);
+                    oproduct.Costo = Convert.ToDecimal(txtCosto.Text);
 
-            GetallProducts();
-            clear();
+                    using (var client = new HttpClient())
+                    {
+                        var serializedStudent = JsonConvert.SerializeObject(oproduct);
+                        var content = new StringContent(serializedStudent, Encoding.UTF8, "application/json");
+                        var response = await client.PostAsync("https://localhost:7220/api/Producto", content);
+                        if (response.IsSuccessStatusCode)
+                            MessageBox.Show("Producto agregado");
+                        else
+                            MessageBox.Show($"Error al guardar el producto: {response.Content.ReadAsStringAsync().Result}");
+                    }
+
+                    GetallProducts();
+                    clear();
+                }
+                else
+                {
+                    MessageBox.Show("Debe llenar todos los espacio requeridos", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Formato no aceptado","Error de llenado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -154,27 +169,34 @@ namespace JuanitoSA
         private async void UpdateProduct()
         {
 
-            UpdateProductoDto productoDto = new UpdateProductoDto();
-            productoDto.Costo = Convert.ToDecimal(txtCosto.Text);
-            productoDto.Nombre = txtNombre.Text;
-            productoDto.Existencia = Convert.ToInt32(txtexistencia.Text);
-            productoDto.Precio = Convert.ToDecimal(txtPrecio.Text);
-            productoDto.Id_Proveedor = Convert.ToInt32(txtIdProveedor.Text);
-            productoDto.Id = id;
-
-
-            using (var client = new HttpClient())
+            if (txtCosto.Text != "" || txtexistencia.Text != "" || txtIdProveedor.Text != "" || txtNombre.Text != "" || txtPrecio.Text != "")
             {
-                var producto = JsonConvert.SerializeObject(productoDto);
-                var content = new StringContent(producto, Encoding.UTF8, "application/json");
-                var response = await client.PutAsync(String.Format("{0}/{1}", "https://localhost:7220/api/Producto", id), content);
-                if (response.IsSuccessStatusCode)
-                    MessageBox.Show("Producto actualizado");
-                else
-                    MessageBox.Show($"Error al actualizar el producto: {response.StatusCode}");
+                UpdateProductoDto productoDto = new UpdateProductoDto();
+                productoDto.Costo = Convert.ToDecimal(txtCosto.Text);
+                productoDto.Nombre = txtNombre.Text;
+                productoDto.Existencia = Convert.ToInt32(txtexistencia.Text);
+                productoDto.Precio = Convert.ToDecimal(txtPrecio.Text);
+                productoDto.Id_Proveedor = Convert.ToInt32(txtIdProveedor.Text);
+                productoDto.Id = id;
+
+
+                using (var client = new HttpClient())
+                {
+                    var producto = JsonConvert.SerializeObject(productoDto);
+                    var content = new StringContent(producto, Encoding.UTF8, "application/json");
+                    var response = await client.PutAsync(String.Format("{0}/{1}", "https://localhost:7220/api/Producto", id), content);
+                    if (response.IsSuccessStatusCode)
+                        MessageBox.Show("Producto actualizado");
+                    else
+                        MessageBox.Show($"Error al actualizar el producto: {response.StatusCode}");
+                }
+                clear();
+                GetallProducts(); 
             }
-            clear();
-            GetallProducts();
+            else
+            {
+                MessageBox.Show("Debe haber  información para actualizar la información del producto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
