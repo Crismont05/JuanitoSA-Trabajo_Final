@@ -167,5 +167,49 @@ namespace JuanitoSA
         {
             Deleteprovider(id);
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateProvider();
+        }
+
+        private async void UpdateProvider()
+        {
+            if(txtNombre.Text != "" || txtApellido.Text != "" || txtIDProvider.Text != "" || txtDireccion.Text != "" || txtNacionalidad.Text != "" || txtNumero.Text != "")
+            {
+                UpdateProveedorDto provider = new UpdateProveedorDto();
+                provider.Nombre = txtNombre.Text;
+                provider.Apellido = txtApellido.Text;
+                provider.Id = int.Parse(txtIDProvider.Text);
+                provider.Direccion = txtDireccion.Text;
+                if (rbMasculino.Checked == true)
+                {
+                    provider.Sexo = 'm';
+                }
+                else
+                {
+                    provider.Sexo = 'f';
+                }
+                provider.Nacionalidad = txtNacionalidad.Text;
+                provider.Nacimiento = dtpBirthDate.Value;
+                provider.Telefono = txtNumero.Text;
+                using (var client = new HttpClient())
+                {
+                    var Proveedor = JsonConvert.SerializeObject(provider);
+                    var content = new StringContent(Proveedor, Encoding.UTF8, "application/json");
+                    var response = await client.PutAsync(String.Format("{0}/{1}", "https://localhost:7220/api/Proveedor", id), content);
+                    if (response.IsSuccessStatusCode)
+                        MessageBox.Show("Proveedor actualizado");
+                    else
+                        MessageBox.Show($"Error al actualizar el proveedor: {response.StatusCode}");
+                }
+                Clear();
+                GetAllProviders();
+            }
+            else
+            {
+                MessageBox.Show("Debe haber información para actualizar la información del proveedor", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

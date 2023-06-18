@@ -53,7 +53,7 @@
             label3 = new Label();
             label2 = new Label();
             tabPage2 = new TabPage();
-            button3 = new Button();
+            btnUpdate = new Button();
             btnDelete = new Button();
             dgvListado = new DataGridView();
             tabControl1.SuspendLayout();
@@ -341,7 +341,7 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.FromArgb(28, 37, 48);
-            tabPage2.Controls.Add(button3);
+            tabPage2.Controls.Add(btnUpdate);
             tabPage2.Controls.Add(btnDelete);
             tabPage2.Controls.Add(dgvListado);
             tabPage2.Location = new Point(4, 26);
@@ -351,18 +351,19 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Listado";
             // 
-            // button3
+            // btnUpdate
             // 
-            button3.BackColor = Color.FromArgb(28, 37, 48);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(243, 410);
-            button3.Name = "button3";
-            button3.Size = new Size(117, 36);
-            button3.TabIndex = 8;
-            button3.Text = "Modificar";
-            button3.UseVisualStyleBackColor = false;
+            btnUpdate.BackColor = Color.FromArgb(28, 37, 48);
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(243, 410);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(117, 36);
+            btnUpdate.TabIndex = 8;
+            btnUpdate.Text = "Modificar";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnDelete
             // 
@@ -444,7 +445,7 @@
         private TextBox txtDireccion;
         private Label label9;
         private Button btnDelete;
-        private Button button3;
+        private Button btnUpdate;
         private DataGridView dgvListado;
         private DateTimePicker dtpBirthDate;
         private TextBox txtNacionalidad;
