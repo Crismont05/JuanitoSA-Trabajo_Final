@@ -19,6 +19,28 @@ namespace JuanitoSA
             fh.Show();
         }
 
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            AbrirFormPanel(new Inicio());
+        }
+
+
+        private void pictureBox6_Click_1(object sender, EventArgs e)
+        {
+            if (panelMenuVertical.Width == 77)
+            {
+                panelMenuVertical.Width = 187;
+            }
+            else
+                panelMenuVertical.Width = 77;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            btnInicio_Click(null, e);
+        }
+
         private void btnProductos_Click(object sender, EventArgs e)
         {
             AbrirFormPanel(new Productos());
@@ -34,32 +56,9 @@ namespace JuanitoSA
             AbrirFormPanel(new Ventas());
         }
 
-        private void btnCompras_Click(object sender, EventArgs e) { }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            if (panelMenuVertical.Width == 77)
-            {
-                panelMenuVertical.Width = 187;
-            }
-            else
-                panelMenuVertical.Width = 77;
-
-        }
-
-        private void btnInicio_Click(object sender, EventArgs e)
+        private void btnInicio_Click_1(object sender, EventArgs e)
         {
             AbrirFormPanel(new Inicio());
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            btnInicio_Click(null, e);
-        }
-
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

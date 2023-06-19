@@ -49,10 +49,10 @@ namespace JuanitoSA
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            AddProducto();
+            AddProduct();
         }
 
-        public async void AddProducto()
+        public async void AddProduct()
         {
             try
             {
@@ -122,12 +122,12 @@ namespace JuanitoSA
                 if (row.Index == e.RowIndex)
                 {
                     id = int.Parse(row.Cells[0].Value.ToString());
-                    GetStudentById(id);
+                    GetProductById(id);
                 }
             }
         }
 
-        private async void GetStudentById(int id)
+        private async void GetProductById(int id)
         {
             using (var client = new HttpClient())
             {

@@ -29,211 +29,216 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panelMenuVertical = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnVentas = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.btnProductos = new System.Windows.Forms.Button();
-            this.btnInicio = new System.Windows.Forms.PictureBox();
-            this.panelBarraTitulo = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelContenedor = new System.Windows.Forms.Panel();
-            this.panelMenuVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
-            this.panelBarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.SuspendLayout();
+            panelMenuVertical = new Panel();
+            pictureBox4 = new PictureBox();
+            panel3 = new Panel();
+            btnVentas = new Button();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            panel2 = new Panel();
+            panel1 = new Panel();
+            btnClientes = new Button();
+            btnProductos = new Button();
+            btnInicio = new PictureBox();
+            panelBarraTitulo = new Panel();
+            pictureBox6 = new PictureBox();
+            label1 = new Label();
+            panelContenedor = new Panel();
+            panelMenuVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnInicio).BeginInit();
+            panelBarraTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            SuspendLayout();
             // 
             // panelMenuVertical
             // 
-            this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(37)))), ((int)(((byte)(48)))));
-            this.panelMenuVertical.Controls.Add(this.pictureBox4);
-            this.panelMenuVertical.Controls.Add(this.panel3);
-            this.panelMenuVertical.Controls.Add(this.btnVentas);
-            this.panelMenuVertical.Controls.Add(this.pictureBox3);
-            this.panelMenuVertical.Controls.Add(this.pictureBox2);
-            this.panelMenuVertical.Controls.Add(this.panel2);
-            this.panelMenuVertical.Controls.Add(this.panel1);
-            this.panelMenuVertical.Controls.Add(this.btnClientes);
-            this.panelMenuVertical.Controls.Add(this.btnProductos);
-            this.panelMenuVertical.Controls.Add(this.btnInicio);
-            this.panelMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenuVertical.Location = new System.Drawing.Point(0, 0);
-            this.panelMenuVertical.Name = "panelMenuVertical";
-            this.panelMenuVertical.Size = new System.Drawing.Size(77, 536);
-            this.panelMenuVertical.TabIndex = 0;
+            panelMenuVertical.BackColor = Color.FromArgb(28, 37, 48);
+            panelMenuVertical.Controls.Add(pictureBox4);
+            panelMenuVertical.Controls.Add(panel3);
+            panelMenuVertical.Controls.Add(btnVentas);
+            panelMenuVertical.Controls.Add(pictureBox3);
+            panelMenuVertical.Controls.Add(pictureBox2);
+            panelMenuVertical.Controls.Add(panel2);
+            panelMenuVertical.Controls.Add(panel1);
+            panelMenuVertical.Controls.Add(btnClientes);
+            panelMenuVertical.Controls.Add(btnProductos);
+            panelMenuVertical.Controls.Add(btnInicio);
+            panelMenuVertical.Dock = DockStyle.Left;
+            panelMenuVertical.Location = new Point(0, 0);
+            panelMenuVertical.Name = "panelMenuVertical";
+            panelMenuVertical.Size = new Size(77, 536);
+            panelMenuVertical.TabIndex = 0;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(23, 343);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(51, 41);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(23, 343);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(51, 41);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 5;
+            pictureBox4.TabStop = false;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.MediumBlue;
-            this.panel3.Location = new System.Drawing.Point(0, 329);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(17, 63);
-            this.panel3.TabIndex = 6;
+            panel3.BackColor = Color.MediumBlue;
+            panel3.Location = new Point(0, 329);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(17, 63);
+            panel3.TabIndex = 6;
             // 
             // btnVentas
             // 
-            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnVentas.ForeColor = System.Drawing.Color.White;
-            this.btnVentas.Location = new System.Drawing.Point(0, 329);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(242, 63);
-            this.btnVentas.TabIndex = 7;
-            this.btnVentas.Text = "Ventas";
-            this.btnVentas.UseVisualStyleBackColor = true;
+            btnVentas.FlatStyle = FlatStyle.Flat;
+            btnVentas.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVentas.ForeColor = Color.White;
+            btnVentas.Location = new Point(0, 329);
+            btnVentas.Name = "btnVentas";
+            btnVentas.Size = new Size(242, 63);
+            btnVentas.TabIndex = 7;
+            btnVentas.Text = "Ventas";
+            btnVentas.UseVisualStyleBackColor = true;
+            btnVentas.Click += btnVentas_Click;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::JuanitoSA.Properties.Resources.people_blue;
-            this.pictureBox3.Location = new System.Drawing.Point(23, 264);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(51, 39);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
+            pictureBox3.Image = Properties.Resources.people_blue;
+            pictureBox3.Location = new Point(23, 264);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(51, 39);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 4;
+            pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::JuanitoSA.Properties.Resources.Investor_Icons_01;
-            this.pictureBox2.Location = new System.Drawing.Point(23, 186);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 39);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = Properties.Resources.Investor_Icons_01;
+            pictureBox2.Location = new Point(23, 186);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(51, 39);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumBlue;
-            this.panel2.Location = new System.Drawing.Point(0, 248);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(17, 66);
-            this.panel2.TabIndex = 3;
+            panel2.BackColor = Color.MediumBlue;
+            panel2.Location = new Point(0, 248);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(17, 66);
+            panel2.TabIndex = 3;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumBlue;
-            this.panel1.Location = new System.Drawing.Point(0, 170);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(17, 63);
-            this.panel1.TabIndex = 0;
+            panel1.BackColor = Color.MediumBlue;
+            panel1.Location = new Point(0, 170);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(17, 63);
+            panel1.TabIndex = 0;
             // 
             // btnClientes
             // 
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnClientes.ForeColor = System.Drawing.Color.White;
-            this.btnClientes.Location = new System.Drawing.Point(0, 248);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(261, 66);
-            this.btnClientes.TabIndex = 2;
-            this.btnClientes.Text = "Proveedores";
-            this.btnClientes.UseVisualStyleBackColor = true;
+            btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClientes.ForeColor = Color.White;
+            btnClientes.Location = new Point(0, 248);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Size = new Size(261, 66);
+            btnClientes.TabIndex = 2;
+            btnClientes.Text = "Proveedores";
+            btnClientes.UseVisualStyleBackColor = true;
+            btnClientes.Click += btnClientes_Click;
             // 
             // btnProductos
             // 
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnProductos.ForeColor = System.Drawing.Color.White;
-            this.btnProductos.Location = new System.Drawing.Point(0, 170);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(242, 63);
-            this.btnProductos.TabIndex = 1;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.UseVisualStyleBackColor = true;
+            btnProductos.FlatStyle = FlatStyle.Flat;
+            btnProductos.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProductos.ForeColor = Color.White;
+            btnProductos.Location = new Point(0, 170);
+            btnProductos.Name = "btnProductos";
+            btnProductos.Size = new Size(242, 63);
+            btnProductos.TabIndex = 1;
+            btnProductos.Text = "Productos";
+            btnProductos.UseVisualStyleBackColor = true;
+            btnProductos.Click += btnProductos_Click;
             // 
             // btnInicio
             // 
-            this.btnInicio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInicio.Image = global::JuanitoSA.Properties.Resources.logo_transparent2;
-            this.btnInicio.Location = new System.Drawing.Point(0, 0);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(77, 147);
-            this.btnInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnInicio.TabIndex = 0;
-            this.btnInicio.TabStop = false;
+            btnInicio.Dock = DockStyle.Top;
+            btnInicio.Image = Properties.Resources.logo_transparent2;
+            btnInicio.Location = new Point(0, 0);
+            btnInicio.Name = "btnInicio";
+            btnInicio.Size = new Size(77, 147);
+            btnInicio.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnInicio.TabIndex = 0;
+            btnInicio.TabStop = false;
+            btnInicio.Click += btnInicio_Click_1;
             // 
             // panelBarraTitulo
             // 
-            this.panelBarraTitulo.BackColor = System.Drawing.Color.MediumBlue;
-            this.panelBarraTitulo.Controls.Add(this.pictureBox6);
-            this.panelBarraTitulo.Controls.Add(this.label1);
-            this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBarraTitulo.Location = new System.Drawing.Point(77, 0);
-            this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(903, 41);
-            this.panelBarraTitulo.TabIndex = 1;
+            panelBarraTitulo.BackColor = Color.MediumBlue;
+            panelBarraTitulo.Controls.Add(pictureBox6);
+            panelBarraTitulo.Controls.Add(label1);
+            panelBarraTitulo.Dock = DockStyle.Top;
+            panelBarraTitulo.Location = new Point(77, 0);
+            panelBarraTitulo.Name = "panelBarraTitulo";
+            panelBarraTitulo.Size = new Size(903, 41);
+            panelBarraTitulo.TabIndex = 1;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::JuanitoSA.Properties.Resources.menu;
-            this.pictureBox6.Location = new System.Drawing.Point(0, 6);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(50, 32);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
+            pictureBox6.Image = Properties.Resources.menu;
+            pictureBox6.Location = new Point(0, 6);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(50, 32);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 0;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click_1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(237, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(355, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SISTEMA DE INVENTARIOS JUANITO S.A";
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Yellow;
+            label1.Location = new Point(237, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(355, 23);
+            label1.TabIndex = 0;
+            label1.Text = "SISTEMA DE INVENTARIOS JUANITO S.A";
             // 
             // panelContenedor
             // 
-            this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(77, 41);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(903, 495);
-            this.panelContenedor.TabIndex = 2;
+            panelContenedor.BackColor = Color.FromArgb(64, 64, 64);
+            panelContenedor.Dock = DockStyle.Fill;
+            panelContenedor.Location = new Point(77, 41);
+            panelContenedor.Name = "panelContenedor";
+            panelContenedor.Size = new Size(903, 495);
+            panelContenedor.TabIndex = 2;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 536);
-            this.Controls.Add(this.panelContenedor);
-            this.Controls.Add(this.panelBarraTitulo);
-            this.Controls.Add(this.panelMenuVertical);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.panelMenuVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
-            this.panelBarraTitulo.ResumeLayout(false);
-            this.panelBarraTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(980, 536);
+            Controls.Add(panelContenedor);
+            Controls.Add(panelBarraTitulo);
+            Controls.Add(panelMenuVertical);
+            Name = "Form1";
+            Text = "Form1";
+            Load += Form1_Load;
+            panelMenuVertical.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnInicio).EndInit();
+            panelBarraTitulo.ResumeLayout(false);
+            panelBarraTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
