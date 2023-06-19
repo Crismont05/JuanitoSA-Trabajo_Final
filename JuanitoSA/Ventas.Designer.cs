@@ -253,7 +253,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Ventas";
             Text = "Ventas";
-            Load += Ventas_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvVentas).EndInit();

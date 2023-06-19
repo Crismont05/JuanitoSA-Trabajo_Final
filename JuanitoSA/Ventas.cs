@@ -29,7 +29,7 @@ namespace JuanitoSA
         }
 
         void limpiar()
-        { 
+        {
             txtID.Text = "";
             txtCantidad.Text = "";
         }
@@ -83,6 +83,7 @@ namespace JuanitoSA
 
         private void btnSell_Click(object sender, EventArgs e)
         {
+            ObtenerProducts();
             GetProductById(int.Parse(txtID.Text));
             venta = new Venta(productDto.Id, productDto.Nombre, productDto.Id_Proveedor, productDto.Costo, productDto.Precio, int.Parse(txtCantidad.Text), 0, dtpFecha.Value);
             Agregar(venta);
@@ -91,6 +92,7 @@ namespace JuanitoSA
         }
         private void Agregar(Venta venta)
         {
+            ObtenerProducts();
             bool Encontrado = false;
             bool Error = false;
             foreach (var v in ventas)
@@ -127,6 +129,7 @@ namespace JuanitoSA
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
+            ObtenerProducts();
             btnSell.Enabled = true;
             GetProductById(int.Parse(txtID.Text));
             venta = new Venta(productDto.Id, productDto.Nombre, productDto.Id_Proveedor, productDto.Costo, productDto.Precio, 0, int.Parse(txtCantidad.Text), dtpFecha.Value);
@@ -134,18 +137,13 @@ namespace JuanitoSA
             dgvVentas.DataSource = ventas;
             limpiar();
         }
-
-        private void Ventas_Load(object sender, EventArgs e)
-        {
-            ObtenerProducts();
-        }
         private void GetVentaById(int id)
         {
-            foreach(var v in ventas)
+            foreach (var v in ventas)
             {
-                if(v.Id == id)
+                if (v.Id == id)
                 {
-                    txtID.Text = v.Id.ToString();   
+                    txtID.Text = v.Id.ToString();
                     txtCantidad.Text = (v.Salida - v.Entrada).ToString();
                     dtpFecha.Value = v.Fecha;
                 }

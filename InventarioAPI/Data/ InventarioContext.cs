@@ -8,5 +8,10 @@ namespace InventarioAPI.Data
         public DbSet<Producto> Productos { get; set; }
 
         public DbSet<Proveedor> Proveedores { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
