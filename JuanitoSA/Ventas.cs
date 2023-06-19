@@ -20,7 +20,6 @@ namespace JuanitoSA
         ProductoDto productDto = new ProductoDto();
         List<ProductoDto> products = new List<ProductoDto>();
         List<Venta> ventas = new List<Venta>();
-        int i = 1;
         int id;
 
         public Ventas()
@@ -45,54 +44,87 @@ namespace JuanitoSA
                 }
             }
         }
-        private async void ObtenerProducts()
+        private async void EjecutarVenta()
         {
+            int id = Convert.ToInt32(txtID.Text);
             products.Clear();
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync("https://localhost:7220/api/Producto"))
+                var response1 = await client.GetAsync("https://localhost:7220/api/Producto");
+                if (response1.IsSuccessStatusCode)
                 {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var productos = await response.Content.ReadAsStringAsync();
-                        products = JsonConvert.DeserializeObject<List<ProductoDto>>(productos);
-                    }
-                    else
-                    {
-                        MessageBox.Show($"No se puede obtener la lista de los Proveedores: {response.StatusCode}");
-                    }
-                }
-            }
-        }
-        private async void GetProductById(int id)
-        {
-            using (var client = new HttpClient())
-            {
-                var response = await client.GetAsync(String.Format("{0}/{1}", "https://localhost:7220/api/Producto", id));
-                if (response.IsSuccessStatusCode)
-                {
-                    var producto = await response.Content.ReadAsStringAsync();
-                    productDto = JsonConvert.DeserializeObject<ProductoDto>(producto);
+                    var productos = await response1.Content.ReadAsStringAsync();
+                    products = JsonConvert.DeserializeObject<List<ProductoDto>>(productos);
                 }
                 else
                 {
-                    MessageBox.Show($"No se puede obtener el producto: {response.StatusCode}");
+                    MessageBox.Show($"No se puede obtener la lista de los Proveedores: {response1.StatusCode}");
                 }
+                foreach (ProductoDto p in products)
+                {
+                    if (p.Id == id)
+                    {
+                        productDto.Id = p.Id;
+                        productDto.Nombre = p.Nombre;
+                        productDto.Id_Proveedor = p.Id_Proveedor;
+                        productDto.Costo = p.Costo;
+                        productDto.Precio = p.Precio;
+                        productDto.Existencia = p.Existencia;
+                    }
+                }
+                venta = new Venta(productDto.Id, productDto.Nombre, productDto.Id_Proveedor, productDto.Costo, productDto.Precio, Convert.ToInt32(txtCantidad.Text), 0, dtpFecha.Value);
+                Agregar(venta);
+                dgvVentas.DataSource = ventas;
+                limpiar();
+            }
+        }
+        private async void EjecutarCompra()
+        {
+            int id = Convert.ToInt32(txtID.Text);
+            products.Clear();
+            using (var client = new HttpClient())
+            {
+                var response1 = await client.GetAsync("https://localhost:7220/api/Producto");
+                if (response1.IsSuccessStatusCode)
+                {
+                    var productos = await response1.Content.ReadAsStringAsync();
+                    products = JsonConvert.DeserializeObject<List<ProductoDto>>(productos);
+                }
+                else
+                {
+                    MessageBox.Show($"No se puede obtener la lista de los Proveedores: {response1.StatusCode}");
+                }
+                foreach (ProductoDto p in products)
+                {
+                    if (p.Id == id)
+                    {
+                        productDto.Id = p.Id;
+                        productDto.Nombre = p.Nombre;
+                        productDto.Id_Proveedor = p.Id_Proveedor;
+                        productDto.Costo = p.Costo;
+                        productDto.Precio = p.Precio;
+                        productDto.Existencia = p.Existencia;
+                    }
+                }
+                venta = new Venta(productDto.Id, productDto.Nombre, productDto.Id_Proveedor, productDto.Costo, productDto.Precio, 0, Convert.ToInt32(txtCantidad.Text), dtpFecha.Value);
+                Agregar(venta);
+                dgvVentas.DataSource = null;
+                dgvVentas.DataSource = ventas;
+                limpiar();
             }
         }
 
         private void btnSell_Click(object sender, EventArgs e)
         {
-            ObtenerProducts();
-            GetProductById(int.Parse(txtID.Text));
-            venta = new Venta(productDto.Id, productDto.Nombre, productDto.Id_Proveedor, productDto.Costo, productDto.Precio, int.Parse(txtCantidad.Text), 0, dtpFecha.Value);
-            Agregar(venta);
-            dgvVentas.DataSource = ventas;
-            limpiar();
+            if (txtID.Text != "" || txtCantidad.Text != "")
+            {
+                btnEliminar.Enabled = true;
+                btnSell.Enabled = true;
+                EjecutarVenta();
+            }
         }
         private void Agregar(Venta venta)
         {
-            ObtenerProducts();
             bool Encontrado = false;
             bool Error = false;
             foreach (var v in ventas)
@@ -121,21 +153,16 @@ namespace JuanitoSA
             {
                 ventas.Add(venta);
             }
-            else
-            {
-                MessageBox.Show("Error al agregar la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-            ObtenerProducts();
-            btnSell.Enabled = true;
-            GetProductById(int.Parse(txtID.Text));
-            venta = new Venta(productDto.Id, productDto.Nombre, productDto.Id_Proveedor, productDto.Costo, productDto.Precio, 0, int.Parse(txtCantidad.Text), dtpFecha.Value);
-            Agregar(venta);
-            dgvVentas.DataSource = ventas;
-            limpiar();
+            if (txtID.Text != "" || txtCantidad.Text != "")
+            {
+                btnEliminar.Enabled = true;
+                btnSell.Enabled = true;
+                EjecutarCompra();
+            }
         }
         private void GetVentaById(int id)
         {
@@ -144,7 +171,7 @@ namespace JuanitoSA
                 if (v.Id == id)
                 {
                     txtID.Text = v.Id.ToString();
-                    txtCantidad.Text = (v.Salida - v.Entrada).ToString();
+                    txtCantidad.Text = (v.Entrada - v.Salida).ToString();
                     dtpFecha.Value = v.Fecha;
                 }
             }

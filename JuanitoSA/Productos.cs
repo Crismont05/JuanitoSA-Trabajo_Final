@@ -136,7 +136,7 @@ namespace JuanitoSA
                 {
                     var producto = await response.Content.ReadAsStringAsync();
                     ProductoDto productoDto = JsonConvert.DeserializeObject<ProductoDto>(producto);
-
+                    
                     txtNombre.Text = productoDto.Nombre;
                     txtIdProveedor.Text = productoDto.Id_Proveedor.ToString();
                     txtexistencia.Text = productoDto.Existencia.ToString();

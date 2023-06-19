@@ -116,13 +116,13 @@
             // 
             // dgvVentas
             // 
-            dgvVentas.BackgroundColor = Color.DarkGray;
             dgvVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvVentas.GridColor = Color.DarkGray;
             dgvVentas.Location = new Point(18, 161);
             dgvVentas.Name = "dgvVentas";
             dgvVentas.RowHeadersWidth = 51;
             dgvVentas.RowTemplate.Height = 25;
+            dgvVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvVentas.Size = new Size(898, 273);
             dgvVentas.TabIndex = 14;
             dgvVentas.CellContentClick += dgvVentas_CellContentClick;
