@@ -135,9 +135,18 @@ namespace JuanitoSA
         {
             if (txtID.Text != "" || txtCantidad.Text != "")
             {
-                btnEliminar.Enabled = true;
-                btnSell.Enabled = true;
-                EjecutarVenta();
+                if (Regex.IsMatch(txtID.Text, "^[0-9]") && Regex.IsMatch(txtCantidad.Text, "^[0-9]"))
+                {
+                    btnEliminar.Enabled = true;
+                    btnSell.Enabled = true;
+                    EjecutarVenta();
+                }
+                else
+                {
+                    limpiar();
+                    MessageBox.Show("Ingrese valores numéricos mayores que 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
         }
         private void Agregar(Venta venta)
@@ -176,9 +185,18 @@ namespace JuanitoSA
         {
             if (txtID.Text != "" || txtCantidad.Text != "")
             {
-                btnEliminar.Enabled = true;
-                btnSell.Enabled = true;
-                EjecutarCompra();
+                if(Regex.IsMatch(txtID.Text, "^[0-9]") && Regex.IsMatch(txtCantidad.Text, "^[0-9]"))
+                {
+                    btnEliminar.Enabled = true;
+                    btnSell.Enabled = true;
+                    EjecutarCompra();
+                }
+                else
+                {
+                    limpiar();
+                    MessageBox.Show("Ingrese valores numéricos mayores que 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
         }
         private void GetVentaById(int id)
