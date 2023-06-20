@@ -61,8 +61,8 @@ namespace JuanitoSA
                 CreateProveedorDto provider = new CreateProveedorDto();
                 provider.Nombre = txtNombre.Text;
                 provider.Apellido = txtApellido.Text;
-                if(Regex.IsMatch(txtIDProvider.Text, "^[0-9]"))
-                provider.Id = int.Parse(txtIDProvider.Text);
+                if (Regex.IsMatch(txtIDProvider.Text, "^[0-9]"))
+                    provider.Id = int.Parse(txtIDProvider.Text);
                 else
                 {
                     Clear();
@@ -81,7 +81,7 @@ namespace JuanitoSA
                 provider.Nacionalidad = txtNacionalidad.Text;
                 provider.Nacimiento = dtpBirthDate.Value;
                 if (Regex.IsMatch(txtNumero.Text, "\\d\\d\\d\\d\\d\\d\\d\\d"))
-                provider.Telefono = txtNumero.Text;
+                    provider.Telefono = txtNumero.Text;
                 else
                 {
                     Clear();
@@ -198,7 +198,7 @@ namespace JuanitoSA
                 provider.Nombre = txtNombre.Text;
                 provider.Apellido = txtApellido.Text;
                 if (Regex.IsMatch(txtIDProvider.Text, "^[0-9]"))
-                provider.Id = int.Parse(txtIDProvider.Text);
+                    provider.Id = int.Parse(txtIDProvider.Text);
                 else
                 {
                     Clear();
@@ -216,8 +216,8 @@ namespace JuanitoSA
                 }
                 provider.Nacionalidad = txtNacionalidad.Text;
                 provider.Nacimiento = dtpBirthDate.Value;
-                if(Regex.IsMatch(txtNumero.Text, "\\d\\d\\d\\d\\d\\d\\d\\d"))
-                provider.Telefono = txtNumero.Text;
+                if (Regex.IsMatch(txtNumero.Text, "\\d\\d\\d\\d\\d\\d\\d\\d"))
+                    provider.Telefono = txtNumero.Text;
                 else
                 {
                     Clear();

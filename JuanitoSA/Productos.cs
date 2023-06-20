@@ -62,7 +62,7 @@ namespace JuanitoSA
                 {
                     CreateProductoDto oproduct = new CreateProductoDto();
                     oproduct.Nombre = txtNombre.Text;
-                    if(Regex.IsMatch(txtPrecio.Text, "^[0-9]") && Regex.IsMatch(txtCosto.Text, "^[0-9]") && Regex.IsMatch(txtexistencia.Text, "^[0-9]") && Regex.IsMatch(txtIdProveedor.Text, "^[0-9]"))
+                    if (Regex.IsMatch(txtPrecio.Text, "^[0-9]") && Regex.IsMatch(txtCosto.Text, "^[0-9]") && Regex.IsMatch(txtexistencia.Text, "^[0-9]") && Regex.IsMatch(txtIdProveedor.Text, "^[0-9]"))
                     {
                         oproduct.Precio = Convert.ToDecimal(txtPrecio.Text);
                         oproduct.Existencia = Convert.ToInt32(txtexistencia.Text);
@@ -96,7 +96,7 @@ namespace JuanitoSA
             }
             catch (Exception)
             {
-                MessageBox.Show("Formato no aceptado","Error de llenado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Formato no aceptado", "Error de llenado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
         }
@@ -136,7 +136,11 @@ namespace JuanitoSA
                 }
             }
         }
-
+        /// <summary>
+        /// Busca mediante la variable ID un producto en la base de datos mediante la API y si este coincide lo manda a llamar y deserializar 
+        /// para tener datos concisos
+        /// </summary>
+        /// <param name="id">Variable con la que se busca coincidencia en la información de la base de datos</param>
         private async void GetProductById(int id)
         {
             using (var client = new HttpClient())
@@ -146,7 +150,7 @@ namespace JuanitoSA
                 {
                     var producto = await response.Content.ReadAsStringAsync();
                     ProductoDto productoDto = JsonConvert.DeserializeObject<ProductoDto>(producto);
-                    
+
                     txtNombre.Text = productoDto.Nombre;
                     txtIdProveedor.Text = productoDto.Id_Proveedor.ToString();
                     txtexistencia.Text = productoDto.Existencia.ToString();
@@ -175,6 +179,9 @@ namespace JuanitoSA
         {
             UpdateProduct();
         }
+        ///<summary>
+        ///Envía información para actualizar el producto en la base de datos a través de la API
+        ///</summary>
 
         private async void UpdateProduct()
         {
@@ -206,7 +213,7 @@ namespace JuanitoSA
                         MessageBox.Show($"Error al actualizar el producto: {response.StatusCode}");
                 }
                 clear();
-                GetallProducts(); 
+                GetallProducts();
             }
             else
             {

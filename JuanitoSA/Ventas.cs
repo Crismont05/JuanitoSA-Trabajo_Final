@@ -115,7 +115,7 @@ namespace JuanitoSA
                         productDto.Existencia = p.Existencia;
                     }
                 }
-                if(Regex.IsMatch(txtCantidad.Text, "^[0-9]") && Regex.IsMatch(txtID.Text, "^[0-9]"))
+                if (Regex.IsMatch(txtCantidad.Text, "^[0-9]") && Regex.IsMatch(txtID.Text, "^[0-9]"))
                     venta = new Venta(productDto.Id, productDto.Nombre, productDto.Id_Proveedor, productDto.Costo, productDto.Precio, 0, Convert.ToInt32(txtCantidad.Text), dtpFecha.Value);
                 else
                 {
@@ -185,7 +185,7 @@ namespace JuanitoSA
         {
             if (txtID.Text != "" || txtCantidad.Text != "")
             {
-                if(Regex.IsMatch(txtID.Text, "^[0-9]") && Regex.IsMatch(txtCantidad.Text, "^[0-9]"))
+                if (Regex.IsMatch(txtID.Text, "^[0-9]") && Regex.IsMatch(txtCantidad.Text, "^[0-9]"))
                 {
                     btnEliminar.Enabled = true;
                     btnSell.Enabled = true;

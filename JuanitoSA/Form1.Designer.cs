@@ -69,7 +69,7 @@
             panelMenuVertical.Dock = DockStyle.Left;
             panelMenuVertical.Location = new Point(0, 0);
             panelMenuVertical.Name = "panelMenuVertical";
-            panelMenuVertical.Size = new Size(77, 536);
+            panelMenuVertical.Size = new Size(77, 647);
             panelMenuVertical.TabIndex = 0;
             // 
             // pictureBox4
@@ -185,7 +185,7 @@
             panelBarraTitulo.Dock = DockStyle.Top;
             panelBarraTitulo.Location = new Point(77, 0);
             panelBarraTitulo.Name = "panelBarraTitulo";
-            panelBarraTitulo.Size = new Size(903, 41);
+            panelBarraTitulo.Size = new Size(1112, 41);
             panelBarraTitulo.TabIndex = 1;
             // 
             // pictureBox6
@@ -204,7 +204,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.Yellow;
-            label1.Location = new Point(237, 9);
+            label1.Location = new Point(427, 9);
             label1.Name = "label1";
             label1.Size = new Size(355, 23);
             label1.TabIndex = 0;
@@ -216,19 +216,23 @@
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(77, 41);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(903, 495);
+            panelContenedor.RightToLeft = RightToLeft.No;
+            panelContenedor.Size = new Size(1112, 606);
             panelContenedor.TabIndex = 2;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(980, 536);
+            ClientSize = new Size(1189, 647);
             Controls.Add(panelContenedor);
             Controls.Add(panelBarraTitulo);
             Controls.Add(panelMenuVertical);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
-            Text = "Form1";
+            RightToLeftLayout = true;
+            Text = "Juanito S.A";
             Load += Form1_Load;
             panelMenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

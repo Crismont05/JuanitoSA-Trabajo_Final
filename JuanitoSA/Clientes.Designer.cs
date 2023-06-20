@@ -70,7 +70,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(313, 9);
+            label1.Location = new Point(313, -3);
             label1.Name = "label1";
             label1.Size = new Size(288, 24);
             label1.TabIndex = 0;
@@ -81,7 +81,7 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            tabControl1.Location = new Point(66, 36);
+            tabControl1.Location = new Point(84, 24);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(749, 495);
@@ -399,7 +399,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 37, 48);
-            ClientSize = new Size(960, 604);
+            ClientSize = new Size(903, 495);
             Controls.Add(tabControl1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
