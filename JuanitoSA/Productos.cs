@@ -1,4 +1,5 @@
-﻿using InventarioAPI.Models.ProductoDto;
+﻿using InventarioAPI.Models;
+using InventarioAPI.Models.ProductoDto;
 using InventarioAPI.Models.ProveedorDto;
 using Newtonsoft.Json;
 using System;
@@ -9,6 +10,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -56,15 +58,23 @@ namespace JuanitoSA
         {
             try
             {
-                if (txtCosto.Text != "" || txtexistencia.Text != "" || txtIdProveedor.Text != "" || txtNombre.Text != "" || txtPrecio.Text != "")
+                if (txtCosto.Text != "" && txtexistencia.Text != "" && txtIdProveedor.Text != "" && txtNombre.Text != "" && txtPrecio.Text != "")
                 {
                     CreateProductoDto oproduct = new CreateProductoDto();
                     oproduct.Nombre = txtNombre.Text;
-                    oproduct.Precio = Convert.ToDecimal(txtPrecio.Text);
-                    oproduct.Existencia = Convert.ToInt32(txtexistencia.Text);
-                    oproduct.Id_Proveedor = Convert.ToInt32(txtIdProveedor.Text);
-                    oproduct.Costo = Convert.ToDecimal(txtCosto.Text);
-
+                    if(Regex.IsMatch(txtPrecio.Text, "^[0-9]") && Regex.IsMatch(txtCosto.Text, "^[0-9]") && Regex.IsMatch(txtexistencia.Text, "^[0-9]") && Regex.IsMatch(txtIdProveedor.Text, "^[0-9]"))
+                    {
+                        oproduct.Precio = Convert.ToDecimal(txtPrecio.Text);
+                        oproduct.Existencia = Convert.ToInt32(txtexistencia.Text);
+                        oproduct.Id_Proveedor = Convert.ToInt32(txtIdProveedor.Text);
+                        oproduct.Costo = Convert.ToDecimal(txtCosto.Text);
+                    }
+                    else
+                    {
+                        clear();
+                        MessageBox.Show("Debe ingresar un número mayor que 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     using (var client = new HttpClient())
                     {
                         var serializedStudent = JsonConvert.SerializeObject(oproduct);
@@ -168,18 +178,23 @@ namespace JuanitoSA
 
         private async void UpdateProduct()
         {
-
-            if (txtCosto.Text != "" || txtexistencia.Text != "" || txtIdProveedor.Text != "" || txtNombre.Text != "" || txtPrecio.Text != "")
+            if (txtCosto.Text != "" && txtexistencia.Text != "" && txtIdProveedor.Text != "" && txtNombre.Text != "" && txtPrecio.Text != "")
             {
                 UpdateProductoDto productoDto = new UpdateProductoDto();
-                productoDto.Costo = Convert.ToDecimal(txtCosto.Text);
                 productoDto.Nombre = txtNombre.Text;
-                productoDto.Existencia = Convert.ToInt32(txtexistencia.Text);
-                productoDto.Precio = Convert.ToDecimal(txtPrecio.Text);
-                productoDto.Id_Proveedor = Convert.ToInt32(txtIdProveedor.Text);
-                productoDto.Id = id;
-
-
+                if (Regex.IsMatch(txtPrecio.Text, "^[0-9]") && Regex.IsMatch(txtCosto.Text, "^[0-9]") && Regex.IsMatch(txtexistencia.Text, "^[0-9]") && Regex.IsMatch(txtIdProveedor.Text, "^[0-9]"))
+                {
+                    productoDto.Precio = Convert.ToDecimal(txtPrecio.Text);
+                    productoDto.Existencia = Convert.ToInt32(txtexistencia.Text);
+                    productoDto.Id_Proveedor = Convert.ToInt32(txtIdProveedor.Text);
+                    productoDto.Costo = Convert.ToDecimal(txtCosto.Text);
+                }
+                else
+                {
+                    clear();
+                    MessageBox.Show("Debe ingresar un número mayor que 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 using (var client = new HttpClient())
                 {
                     var producto = JsonConvert.SerializeObject(productoDto);

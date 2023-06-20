@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -72,10 +73,18 @@ namespace JuanitoSA
                         productDto.Existencia = p.Existencia;
                     }
                 }
-                venta = new Venta(productDto.Id, productDto.Nombre, productDto.Id_Proveedor, productDto.Costo, productDto.Precio, Convert.ToInt32(txtCantidad.Text), 0, dtpFecha.Value);
+                if (Regex.IsMatch(txtCantidad.Text, "^[0-9]") && Regex.IsMatch(txtID.Text, "^[0-9]"))
+                    venta = new Venta(productDto.Id, productDto.Nombre, productDto.Id_Proveedor, productDto.Costo, productDto.Precio, Convert.ToInt32(txtCantidad.Text), 0, dtpFecha.Value);
+                else
+                {
+                    limpiar();
+                    MessageBox.Show("Debe agregar un número mayor que 0 como cantidad a ocupar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 Agregar(venta);
                 dgvVentas.DataSource = ventas;
                 limpiar();
+                lblMontoVendido.Text = venta.TotalVentas(ventas).ToString();
             }
         }
         private async void EjecutarCompra()
@@ -106,11 +115,19 @@ namespace JuanitoSA
                         productDto.Existencia = p.Existencia;
                     }
                 }
-                venta = new Venta(productDto.Id, productDto.Nombre, productDto.Id_Proveedor, productDto.Costo, productDto.Precio, 0, Convert.ToInt32(txtCantidad.Text), dtpFecha.Value);
+                if(Regex.IsMatch(txtCantidad.Text, "^[0-9]") && Regex.IsMatch(txtID.Text, "^[0-9]"))
+                    venta = new Venta(productDto.Id, productDto.Nombre, productDto.Id_Proveedor, productDto.Costo, productDto.Precio, 0, Convert.ToInt32(txtCantidad.Text), dtpFecha.Value);
+                else
+                {
+                    limpiar();
+                    MessageBox.Show("Ingrese valores numéricos mayores que 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 Agregar(venta);
                 dgvVentas.DataSource = null;
                 dgvVentas.DataSource = ventas;
                 limpiar();
+                lblMontoPagado.Text = venta.TotalCompras(ventas).ToString();
             }
         }
 

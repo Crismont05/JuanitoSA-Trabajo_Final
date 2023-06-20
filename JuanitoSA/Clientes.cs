@@ -10,8 +10,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace JuanitoSA
 {
@@ -54,12 +56,19 @@ namespace JuanitoSA
 
         private async void AddProvider()
         {
-            if (txtNombre.Text != "" || txtApellido.Text != "" || txtIDProvider.Text != "" || txtDireccion.Text != "" || txtNumero.Text != "" || txtNacionalidad.Text != "")
+            if (txtNombre.Text != "" && txtApellido.Text != "" && txtIDProvider.Text != "" && txtDireccion.Text != "" && txtNumero.Text != "" && txtNacionalidad.Text != "")
             {
                 CreateProveedorDto provider = new CreateProveedorDto();
                 provider.Nombre = txtNombre.Text;
                 provider.Apellido = txtApellido.Text;
+                if(Regex.IsMatch(txtIDProvider.Text, "^[0-9]"))
                 provider.Id = int.Parse(txtIDProvider.Text);
+                else
+                {
+                    Clear();
+                    MessageBox.Show("Debe agregar un número como Id", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 provider.Direccion = txtDireccion.Text;
                 if (rbMasculino.Checked == true)
                 {
@@ -71,7 +80,14 @@ namespace JuanitoSA
                 }
                 provider.Nacionalidad = txtNacionalidad.Text;
                 provider.Nacimiento = dtpBirthDate.Value;
+                if (Regex.IsMatch(txtNumero.Text, "\\d\\d\\d\\d\\d\\d\\d\\d"))
                 provider.Telefono = txtNumero.Text;
+                else
+                {
+                    Clear();
+                    MessageBox.Show("Debe agregar un número telefónico válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 using (var client = new HttpClient())
                 {
                     var serializerProvider = JsonConvert.SerializeObject(provider);
@@ -175,12 +191,19 @@ namespace JuanitoSA
 
         private async void UpdateProvider()
         {
-            if(txtNombre.Text != "" || txtApellido.Text != "" || txtIDProvider.Text != "" || txtDireccion.Text != "" || txtNacionalidad.Text != "" || txtNumero.Text != "")
+            if (txtNombre.Text != "" && txtApellido.Text != "" && txtIDProvider.Text != "" && txtDireccion.Text != "" && txtNacionalidad.Text != "" && txtNumero.Text != "")
             {
                 UpdateProveedorDto provider = new UpdateProveedorDto();
                 provider.Nombre = txtNombre.Text;
                 provider.Apellido = txtApellido.Text;
+                if (Regex.IsMatch(txtIDProvider.Text, "^[0-9]"))
                 provider.Id = int.Parse(txtIDProvider.Text);
+                else
+                {
+                    Clear();
+                    MessageBox.Show("Debe agregar un número como Id", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 provider.Direccion = txtDireccion.Text;
                 if (rbMasculino.Checked == true)
                 {
@@ -192,7 +215,13 @@ namespace JuanitoSA
                 }
                 provider.Nacionalidad = txtNacionalidad.Text;
                 provider.Nacimiento = dtpBirthDate.Value;
+                if(Regex.IsMatch(txtNumero.Text, "\\d\\d\\d\\d\\d\\d\\d\\d"))
                 provider.Telefono = txtNumero.Text;
+                else
+                {
+                    Clear();
+                    MessageBox.Show("Debe agregar un número telefónico válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 using (var client = new HttpClient())
                 {
                     var Proveedor = JsonConvert.SerializeObject(provider);

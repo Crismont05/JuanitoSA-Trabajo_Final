@@ -72,9 +72,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(313, 9);
             label1.Name = "label1";
-            label1.Size = new Size(228, 24);
+            label1.Size = new Size(288, 24);
             label1.TabIndex = 0;
-            label1.Text = "DETALLES DE CLIENTES";
+            label1.Text = "DETALLES DE PROVEEDORES";
             // 
             // tabControl1
             // 
