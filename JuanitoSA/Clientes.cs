@@ -111,6 +111,7 @@ namespace JuanitoSA
 
         private void Clear()
         {
+            txtNacionalidad.Clear();
             txtNombre.Clear();
             txtApellido.Clear();
             txtDireccion.Clear();
