@@ -188,6 +188,7 @@ namespace JuanitoSA
             if (txtCosto.Text != "" && txtexistencia.Text != "" && txtIdProveedor.Text != "" && txtNombre.Text != "" && txtPrecio.Text != "")
             {
                 UpdateProductoDto productoDto = new UpdateProductoDto();
+                productoDto.Id = id;
                 productoDto.Nombre = txtNombre.Text;
                 if (Regex.IsMatch(txtPrecio.Text, "^[0-9]") && Regex.IsMatch(txtCosto.Text, "^[0-9]") && Regex.IsMatch(txtexistencia.Text, "^[0-9]") && Regex.IsMatch(txtIdProveedor.Text, "^[0-9]"))
                 {
